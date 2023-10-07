@@ -1,5 +1,8 @@
+require("dotenv").config();
 const { Web3 } = require('web3');
-const web3 = new Web3('http://localhost:8545'); // Sostituisci con l'URL di Ganache
+const ethNodeURL = process.env.ETH_NODE_URL;
+
+const web3 = new Web3(ethNodeURL);
 
 web3.eth.net.getId()
     .then((chainId) => {
